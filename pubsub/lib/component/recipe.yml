@@ -1,15 +1,15 @@
 ---
 RecipeFormatVersion: 2020-01-25
-ComponentName: com.rugger.pubsub
-ComponentDescription: First PubSub component for GGv2
+ComponentName: com.amazon.greengrass2.cdk.demo.pubsub
+ComponentDescription: PubSub component demo for GGv2
 ComponentPublisher: Amazon
-ComponentVersion: '1.0.0'
+ComponentVersion: "1.0.0"
 ComponentDependencies:
   awsiot.greengrasscoreipc.client:
-    VersionRequirement: '>=0.0.0'
+    VersionRequirement: ">=0.0.0"
     DependencyType: HARD
   awsiot.greengrasscoreipc.model:
-    VersionRequirement: '>=0.0.0'
+    VersionRequirement: ">=0.0.0"
     DependencyType: HARD
 Manifests:
   - Platform:

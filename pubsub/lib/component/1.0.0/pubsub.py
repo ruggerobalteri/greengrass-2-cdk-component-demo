@@ -13,7 +13,8 @@ logger = logging.getLogger(__name__)
 
 
 TIMEOUT = 10
-topic = "my/topic"
+input_topic = "input_response/data"
+output_topic = "output_response/data"
 
 ipc_utils = IPCUtils()
 connection = ipc_utils.connect()
@@ -28,7 +29,7 @@ class StreamHandler(client.SubscribeToIoTCoreStreamHandler):
         message = str(event.message.payload, "utf-8")
         logger.info("Received message: {}".format(message))
         request = PublishToTopicRequest()
-        request.topic = "{}/responsedata".format(topic)
+        request.topic = output_topic
         publish_message = PublishMessage()
         publish_message.binary_message = BinaryMessage()
         publish_message.binary_message.message = bytes(
@@ -55,7 +56,7 @@ def handler():
     qos = QOS.AT_MOST_ONCE
 
     request = SubscribeToIoTCoreRequest()
-    request.topic_name = topic
+    request.topic_name = input_topic
     request.qos = qos
     handler = StreamHandler()
     operation = ipc_client.new_subscribe_to_iot_core(handler)

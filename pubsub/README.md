@@ -1,14 +1,15 @@
-# Welcome to your CDK TypeScript project!
+# Welcome to Greengrass v2 Pubsub component built in CDK!
 
-This is a blank project for TypeScript development with CDK.
+You can deploy this 1-stack CDK application by running `cdk deploy '*'`. The `--profile` paratemeter is supported.
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+When you modify the stack, if run `npm run build && npm test` the snapshot test will likely fail (this is normal).
+Check the Cloud Formation snapshot differences and, if you agree with the changes, you can accept the new snapshot, by typing `npm test -- -u`
 
-## Useful commands
+## Other Useful commands
 
- * `npm run build`   compile typescript to js
- * `npm run watch`   watch for changes and compile
- * `npm run test`    perform the jest unit tests
- * `cdk deploy`      deploy this stack to your default AWS account/region
- * `cdk diff`        compare deployed stack with current state
- * `cdk synth`       emits the synthesized CloudFormation template
+- `npm run build` compile typescript to js
+- `npm run watch` watch for changes and compile
+- `npm run test` perform the jest unit tests
+- `cdk deploy` deploy this stack to your default AWS account/region
+- `cdk diff` compare deployed stack with current state
+- `cdk synth` emits the synthesized CloudFormation template
